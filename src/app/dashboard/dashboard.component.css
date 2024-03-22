@@ -1,0 +1,479 @@
+
+/* ------------------dashboard CSS----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.wrapper {
+    margin-top: 5vh;
+  }
+  
+  .dataTables_filter {
+    float: right;
+  }
+/*   
+  .table-hover  tbody  tr:hover {
+    background-color: #ccffff;
+    background-color: #00ABE4;
+    background-color: #E9F1FA;
+    background-color: #ffffff;
+  } */
+  
+  .container-fluid{
+    height: 89vh;
+    font-family: "Roboto";
+  }
+
+  .CustomerDashboard{
+    height: 80%;
+    overflow: auto;
+    }
+
+
+  .UserDashboard{
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+  }
+  .datacount{
+    font-size: 24px; 
+    font-weight: 700;
+    height: 40px;
+    margin-left: 10px;
+    color: #0b487d;
+  }
+  .footer{
+    margin-top: 17px !important;
+  }
+
+  .modal-body{
+    padding: 0;
+  
+  }
+  .card-body{
+    height: 600px;
+    width: 2200px;
+  }
+
+  .table-icon{
+    font-size: 22px;
+    color: #337ab7;
+  }
+
+
+   
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+    border-radius: 8px;
+   
+    color: #0b487d;
+  }
+   
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent !important;
+  
+    border: 1px solid  #67C6E3;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background-color: #0b487d;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+    
+  }
+
+  .Button {
+    position: relative;
+    border-radius: 8px;
+    width: 170px;
+    height: 38px;
+    background-color: white;
+    color: #0b487d;
+    border: 1px solid #337ab7;
+    font-size: large;
+    text-decoration: none; /* Remove default text underline */
+    overflow: hidden; /* Hide overflowing content */
+    transition: background-color 0.4s, color 0.3s, border-color 0.3s; /* Smooth transition effect */
+}
+
+.Button:hover{
+  background-color: #337ab7;
+    color: white; /* Text color */
+    border: none;
+ 
+}
+
+  .showEntry{
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    outline: none !important;
+    border-radius: 15px !important;
+    font-size: 18px;
+    font-weight: 500;
+    width: 70px !important;
+    height: 35px !important;
+    background-color: aliceblue;
+  }
+  .showentry-label{
+    padding-top: 2px;
+   font-size: 20px;
+   font-weight: 400;
+ 
+  }
+  
+  .page-link{
+    background-color: transparent;
+  }
+  .pagination{
+    margin-bottom: 0px;
+  }
+  .pagiButton
+  {
+   
+   width: 31;
+   height: 31;
+   border-radius: 20px;
+   background-color:  #67C6E3;
+   background: aliceblue;
+   border: none;
+   color: white;
+   color:  #0b487d;
+  }
+  .actionIcon{
+    height: 60px;
+    width: 60px;
+  }
+  .search-input{
+    width: 220px;
+    height: 40px;
+    padding:0 5px 0 40px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgb(215, 206, 206);
+    
+  
+}
+.search-icon{
+    margin-right: -10px;
+    margin: 10px;
+    color: gainsboro !important;
+    position: absolute;
+    z-index: inherit;
+}
+thead{
+  position: sticky;
+  top: 0;
+  
+}
+
+thead th{
+    height: 50px !important;
+    padding-block: 0px ;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white; /* You can adjust the border color and width as needed */
+    }
+  
+  tbody td{
+    height: 50px !important;
+    margin: 5px !important;
+  }
+  table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    border-radius: 10px !important; /* Adjust the value to control the degree of rounding */
+    overflow: scroll !important; /* Ensure the rounded corners are visible */
+  
+}
+ 
+
+  table tr th{
+    background: white;
+    color:  #67C6E3 !important; 
+    text-align: center !important;
+    padding-bottom: 10px !important;
+    font-weight: 500 !important;
+    height: 40px;
+    font-size: 16px;
+  }
+  table tr td{
+    
+    overflow: hidden !important;
+    word-wrap: break-word !important;
+    text-align:center !important;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    margin: 0px;
+  }
+  table tr:hover{
+    background: rgba(11, 72, 125, .1);
+  }
+  @media only screen and (min-width: 768px) {
+    .table {
+      table-layout: fixed;
+      max-width: 100% !important;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .table {
+      table-layout: fixed;
+      max-width: 15% !important;
+    }
+  }
+  
+  .table td:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .highlight {
+    background: #ffff99;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    /* Force table to not be like tables anymore */
+    table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+      display: block;
+    }
+  
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr,
+  tfoot tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50% !important;
+    }
+  
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  
+    .table td:nth-child(1) {
+      height: 100%;
+      top: 0;
+      left: 0;
+      font-weight: bold;
+    }
+  
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before {
+      content: "First Name";
+    }
+  
+    td:nth-of-type(2):before {
+      content: "Last Name";
+    }
+  
+    td:nth-of-type(3):before {
+      content: "Middle Name";
+    }
+  
+    td:nth-of-type(4):before {
+      content: "Jo Title";
+    }
+  
+    td:nth-of-type(5):before {
+      content: "Personal Email";
+    }
+  
+    td:nth-of-type(6):before {
+      content: "Work Email";
+    }
+    td:nth-of-type(7):before {
+      content: "company Email";
+    }
+    td:nth-of-type(8):before {
+      content: "Country";
+    }
+    td:nth-of-type(9):before {
+      content: "State";
+    }
+    td:nth-of-type(10):before {
+      content: "City";
+    }
+    td:nth-of-type(11):before {
+      content: "Created Date";
+    }
+    td:nth-of-type(12):before {
+      content: "Created By";
+    }
+    td:nth-of-type(13):before {
+      content: "Status";
+    }
+    td:nth-of-type(14):before {
+      content: "Action";
+    }
+  
+    .dataTables_length {
+      display: none;
+    }
+  } 
+  
+  /* --------------------------update added user details CSS------------------ */
+ .CustomerModal-title{
+  /* color: #ABF62D; */
+  color:#0b487d;
+  color: #67C6E3;
+  font-size: 28px;
+  margin-left: 24px;
+  margin-bottom: -5px;
+
+ }
+ .UserModal-title{
+  /* color: #ABF62D; */
+  color:#0b487d;
+  color: #67C6E3;
+  font-size: 28px;
+  margin-left: 13px;
+  margin-bottom: -10px;
+ }
+  .input-detail {
+    border-radius: 0;
+    margin-top: -2px;
+    padding-left: 8px;
+    width: 85%;
+    height: 35px;
+    font-size: 15px;
+    color: #000000;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid  #e6e6e6;
+  }
+  .input-detail:focus {
+    outline: none;
+    border-bottom: 1px solid  #67C6E3;
+  }
+  .modal-label{
+    color: #0b487d;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 5px 0;
+    margin-left: 5px;
+  }
+  
+
+  .input-addUser {  
+    border-radius: 0;
+    margin-top: -2px;
+    padding-left: 8px;
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    color: #000000;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid  #e6e6e6;
+  }
+  .input-addUser:focus {
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    border-bottom: 1px solid  #67C6E3;
+  }
+  
+  label{
+    color: #000000;
+    font-weight: 200;
+    font-size: 20px;
+   
+  }
+
+  .navbar-toggler{
+    border: 1px solid white;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+ /* ==================================Sidebar CSS============== */
+ @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding: 0;
+  margin: 0;
+  padding-left: 200px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  margin: -8px;
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 200px;
+  height: 100%;
+  margin-left: -250px;
+  background: aliceblue;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#sidebar .nav{
+  margin-top: 10px;
+}
+
+
+#sidebar .nav a{
+  background: none;
+  color: #337ab7;
+  font-size: 22px;
+  text-decoration: none;
+}
+.side-nav{
+  height: 40px;
+}
+.side-nav:hover{
+  background: rgba(11, 72, 125, .1);
+ 
+  border-left: 2px solid #0b487d;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}

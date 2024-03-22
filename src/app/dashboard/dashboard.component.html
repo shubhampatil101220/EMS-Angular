@@ -1,0 +1,679 @@
+<app-navbar></app-navbar>
+
+<!-- //add User By modal -->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content p-0 ">
+      <div
+        class=" modal-head px-4 py-0   d-flex  align-items-center w-100 ">
+        <span>
+          <h4 class="fw-bold pt-2 UserModal-title">Adding New User </h4>
+        </span>
+     
+      </div>
+
+      <div class="modal-body p-0">
+
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <form [formGroup]="addUserGroup" (ngSubmit)="addUser()" class="w-100">
+            <div class="form-group m-2">
+              <div class=" align-items-center m-4">
+                <input type="input" class=" input-addUser m-2 " formControlName="firstName"
+                  placeholder="Enter First Name">
+                <input type="input" class=" input-addUser  m-2 " formControlName="lastName"
+                  placeholder="Enter Last Name">
+                <input type="email" class=" input-addUser  m-2 " formControlName="middleName"
+                  placeholder="Enter Middle Name">
+                <input type="email" class=" input-addUser  m-2 " formControlName="email"
+                  placeholder="Enter email address">
+                <input type="password" class=" input-addUser  m-2" formControlName="password"
+                  placeholder="Enter password">
+                  <select formControlName="roleId" class="input-addUser m-2"  placeholder="Select Role">
+                    <option  value="" disabled>-- Please Select Role --</option>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="m-3 d-flex  align-items-center">
+
+              <button type="submit" [disabled]="!addUserGroup.valid" data-bs-dismiss="modal" style="margin-left:60px;"
+              class="Button"> <span class="fw-bold"> Add User</span></button>
+                <button type="button" class=" Button"  data-bs-toggle="modal" style="margin-left:30px;"
+                data-bs-target="#addUser"> <span class="fw-bold"> Cancel</span>
+              </button>
+            </div>
+          
+          </form>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- //UPDATE User DETAILS FORM -->
+<div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content p-0 ">
+      <div
+        class=" modal-head px-4 py-0    d-flex  align-items-center w-100 ">
+        <span>
+          <h4 class="fw-bold pt-2 UserModal-title">Updating Existing User </h4>
+        </span>
+      </div>
+
+      <div class="modal-body p-0">
+
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <form [formGroup]="updateUserGroup" (ngSubmit)="updateUser()" class="w-100">
+            <div class="form-group m-2">
+              <div class=" align-items-center m-4">
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">First Name</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="input" class=" input-addUser  " formControlName="firstName"
+                    placeholder="Enter First Name">
+                  </div>
+                </div>
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">Last Name</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="input" class=" input-addUser " formControlName="lastName"
+                    placeholder="Enter Last Name">
+                  </div>
+                </div>
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">Middle Name</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="email" class=" input-addUser   " formControlName="middleName"
+                    placeholder="Enter Middle Name">
+                  </div>
+                </div>
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">Email</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="email" class=" input-addUser  " formControlName="email"
+                  placeholder="Enter email address">
+                  </div>
+                </div>
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">Password</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="password" class=" input-addUser " formControlName="password"
+                  placeholder="Enter password">
+                  </div>
+                </div>
+                <div class="form-row d-flex justify-content-evenly align-items-center">
+                  <div class="col-md-4 ">
+                    <label  class="modal-label">Update Role</label>
+                  </div>
+                  <div class="col-md-8">
+                    <select formControlName="roleId" class="input-addUser"  placeholder="Select Role">
+                      <option  value="" disabled>-- Please Select Role --</option>
+                      <option value="1">Admin</option>
+                      <option value="2">User</option>
+                    </select>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="m-3 d-flex  align-items-center">
+
+              <button type="submit" [disabled]="!updateUserGroup.valid" data-bs-dismiss="modal" style="margin-left:60px;"
+              class="Button"><span class="fw-bold"> Update</span></button>
+                <button type="button" class=" Button"  data-bs-toggle="modal" style="margin-left:30px;"
+                data-bs-target="#updateUser"> <span class="fw-bold"> Cancel</span>
+              </button>
+            </div>
+        
+          </form>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- //add Customer By modal -->
+<div class="modal fade" id="addDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg ">
+    <div class="modal-content p-0">
+
+      <div class="mod d-flex justify-content-between w-100 px-4 py-2">
+        <span>
+          <h4 class="fw-bold CustomerModal-title">Adding New Customer </h4>
+        </span>
+     
+      </div>
+      <div class="modal-body justify-content-center align-items-center ">
+
+        <div class="d-flex">
+          <form class="w-100 ps-5" [formGroup]="addCustomerGroup" (ngSubmit)="addCustomer()">
+            <div class="form-row d-flex justify-content-evenly align-items-center">
+              <div class="col-md-6 ">
+                <label  class="modal-label">First Name</label>
+                <input type="input" class="input-detail"  formControlName="firstName"
+                  placeholder="Enter First Name">
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="modal-label">Last Name</label>
+                <input type="input" class=" input-detail" formControlName="lastName"
+                  placeholder="Enter Last Name">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Middle Name</label>
+                <input type="input" class=" input-detail" formControlName="middleName"
+                  placeholder="Enter Middle Name">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">Job Title</label>
+                <input type="input" class=" input-detail" formControlName="jobTitle"
+                  placeholder="Enter Job Title">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Company Contact Email</label>
+                <input type="email" class=" input-detail" formControlName="companyContactEmail"
+                  placeholder="Enter Company Contact Mail">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">WorkEmail</label>
+                <input type="email" class=" input-detail" formControlName="workEmail"
+                  placeholder="Enter Work Email">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Personal Email</label>
+                <input type="email" class="input-detail" formControlName="personalEmail"
+                  placeholder="Enter Personal Email">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">Country</label>
+                <input type="input" class=" input-detail" formControlName="country"
+                  placeholder="Enter Country">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">              
+                  <label for="inputState" class="modal-label">State</label>
+                  <select formControlName="state" data-dropup-auto="false" class="d-flex flex-column input-detail" placeholder="select State" id="stateCSS" >
+                    <option value="" disabled>-- Please Select State --</option>
+                    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                  </select>
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">City</label>
+                <input type="input" class="d-flex flex-column input-detail" formControlName="city" placeholder="Enter City">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+            <div class=" col-md-6">
+              <label for="inputAddress" class="modal-label">Linkedin Profile URL</label>
+              <input type="input" class=" input-detail" formControlName="linkedin"
+                placeholder="https://Linkedin.Profile.xyz">
+            </div>
+            <div class=" col-md-6 ">
+              <label for="inputState" class="modal-label ">Status</label>
+              <select formControlName="status" class="d-flex flex-column input-detail "  placeholder="Email Status">
+                <option value="" disabled>-- Please Select Status --</option>
+                <option value="new">New</option>
+                <option value="email sent">Email Sent</option>
+              </select>
+            </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+         
+
+              <div class="form-group col-md-6 ">
+
+                <input type="hidden" class="form-control input-detail" formControlName="createdBy"
+                  placeholder="Cretated By">
+                  <input type="hidden" class="form-control input-detail" formControlName="createdId"
+                  placeholder="Cretated By">
+              </div>
+
+            </div>
+            <div class="m-3 d-flex  align-items-center">
+
+              <button type="submit" class="Button " data-bs-dismiss="modal" style="margin-left:130px;"
+                [disabled]="addCustomerGroup.invalid"><span class="fw-bold"> Submit</span></button>
+                <button type="button" class=" Button" (click)="resetAddCustomerForm()" data-bs-toggle="modal" style="margin-left:60px;"
+                data-bs-target="#addDetails"> <span class="fw-bold"> Cancel</span>
+              </button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- //UPDATE Customer DETAILS FORM -->
+<div class="modal fade" id="updateDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg col-sm-12  ">
+    <div class="modal-content p-0">
+
+      <div class="modal-head d-flex justify-content-between w-100 px-4 py-2">
+        <span>
+          <h4 class="fw-bold CustomerModal-title">Updating Existing Customer </h4>
+        </span>
+      </div>
+      <div class="modal-body justify-content-center align-items-center ">
+
+        <div class="d-flex">
+          <form class="w-100 ps-5" [formGroup]="updateCustomerGroup" (ngSubmit)="updateExistingCustomer()">
+            <div class="form-row d-flex justify-content-evenly align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">First Name</label>
+                <input type="input" class="input-detail" formControlName="firstName"
+                  placeholder="First Name">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">Last Name</label>
+                <input type="input" class=" input-detail" formControlName="lastName"
+                  placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Middle Name</label>
+                <input type="input" class=" input-detail" formControlName="middleName"
+                  placeholder="Middle Name">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">Job Title</label>
+                <input type="input" class=" input-detail" formControlName="jobTitle"
+                  placeholder="Job Title">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Company Contact Email</label>
+                <input type="email" class=" input-detail" formControlName="companyContactEmail"
+                  placeholder="Company Contact Mail">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">WorkEmail</label>
+                <input type="email" class=" input-detail" formControlName="workEmail"
+                  placeholder="Work Email">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class=" col-md-6 ">
+                <label for="inputEmail4" class="modal-label">Personal Email</label>
+                <input type="email" class=" input-detail " formControlName="personalEmail"
+                  placeholder="Personal Email ">
+              </div>
+              <div class=" col-md-6">
+                <label for="inputPassword4" class="modal-label">Country</label>
+                <input type="input" class=" input-detail" formControlName="country" placeholder="Country">
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column col-md-6">
+                <label for="stateSelect" class="modal-label">State</label>
+  
+                <select id="stateSelect" formControlName="state" class=" input-detail">
+                  <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                </select>
+              </div>
+              <div class="d-flex flex-column col-md-6">
+                <label for="inputPassword4" class="modal-label">City</label>
+                <input type="input" class=" input-detail" formControlName="city" placeholder="City">
+              </div>
+            </div>
+          
+            <div class="form-row d-flex justify-content-between align-items-center">
+            <div class="col-md-6">
+              <div class=" me-5">
+                <label for="inputAddress" class="modal-label ">Linkedin Profile URL</label>
+                <input type="input" class=" input-detail w-100" formControlName="linkedin"
+                  placeholder="https://Linkedin.Profile.xyz">
+              </div>
+            </div>
+              <div class=" col-md-6 ">
+                <label for="inputState" class="modal-label">Status</label>
+                <select formControlName="status" class="d-flex flex-column input-detail" placeholder="Email Status">
+                  <option selected>Choose...</option>
+                  <option value="new">New</option>
+                  <option value="email sent">Email Sent</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+
+              </div>
+            </div>
+            <div class="modal-foot m-3 d align-items-center">
+
+              <button type="submit" class="Button " data-bs-dismiss="modal" style="margin-left:130px;"
+                [disabled]="!updateCustomerGroup.valid"><span class="fw-bold"> Submit</span></button>
+                <button type="button" class=" Button" data-bs-toggle="modal" style="margin-left:60px;"
+                data-bs-target="#updateDetails"> <span class="fw-bold"> Cancel</span>
+              </button>
+            </div>
+          
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+     <!-- //Sidebar implementaion -->
+     <div id="viewport">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <header class="w-100 justify-content-center align-items-center ">
+         <img src="../assets/logo.jpeg" alt="img"  class=" w-75 img-fluid rounded mx-auto d-block"/>
+        </header>
+        <ul class="nav w-100">
+          <li class="w-100 side-nav" (click)="LeadDashboard()" >
+            <a >
+              <i class="zmdi zmdi-view-dashboard"></i>Lead Dashboard
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav" *ngIf="admin" (click)="UserDashboard()">
+            <a >
+              <i class="zmdi zmdi-link"></i> User Dashboard
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav" data-bs-toggle="modal"
+          data-bs-target="#addDetails">
+            <a  >
+              <i class="zmdi zmdi-widgets"></i> Add Customer
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav" *ngIf="admin" data-bs-toggle="modal" 
+          data-bs-target="#addUser">
+            <a  >
+              <i class="zmdi zmdi-calendar"></i> Add User
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav">
+           <a>
+              <i class="zmdi zmdi-info-outline"></i> About
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav">
+            <a>
+              <i class="zmdi zmdi-settings"></i> Services
+            </a>
+          </li>
+          <li class="mt-2 w-100 side-nav">
+            <a >
+              <i class="zmdi zmdi-comment-more"></i> Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Content -->
+      <div id="content">
+      
+       
+<!-- =========================================Admin Customer Dashboard====================================================== -->
+<div class="container-fluid" *ngIf="Dashboard">
+  <div class="w-100 d-flex m-2 " >
+  
+    <div class="d-flex  mt-2 w-100 align-items-center">
+      <div class="float-start  ">
+     <label class="d-flex datacount " >Leads &nbsp;&nbsp;<span class="text-secondary">
+          (<span class="text-dark mb-0">{{totalItems}}</span>)
+        </span>
+      </label>
+    </div>
+      <div class="d-flex w-100 justify-content-end float-end align-items-center">
+      <div class="me-2 ">
+        <i class="fa-solid fa-magnifying-glass search-icon text-secondary fs-4 "></i>
+        <input type="text" class="search-input me-2 " placeholder="Search Customer" [(ngModel)]="searchText"
+        (keyup)="CustomerSearch()">
+        
+        </div>
+       
+        <!-- <button type="button" *ngIf="admin" class=" Button me-2 nav-item" (click)="changeDashboard()">
+          <i class="fa-solid fa-repeat"></i>
+          <span class="fw-bold ps-1 "> Dashboard</span>
+         </button>
+       -->
+        <button type="button" class=" Button me-3  float-end " data-bs-toggle="modal"
+          data-bs-target="#addDetails"><i class="fa-solid fa-plus"></i> <span class="fw-bold"> Add Customer</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="CustomerDashboard">
+ 
+    <div class="card-body pt-0">
+      <table id="dataTable" class="table  align-middle ">
+        <thead class="text-center " >
+          <tr>
+            <th style="width: 90px;">First Name</th>
+            <th style="width: 90px; ">Last Name</th>
+            <th style="width: 120px;">Middle Name</th>
+            <th style="width: 95px;">Job Title</th>
+            <th style="width: 125px;">Personal Email</th>
+            <th style="width: 125px;">Work Email</th>
+            <th style="width: 125px;">Company Email</th>
+            <th style="width: 80px;">Country</th>
+            <th style="width: 107px;">State</th>
+            <th style="width: 100px;">City</th>
+            <th style="width: 120px;">Creadted Date</th>
+            <th style="width: 100px;">Creadted By</th>
+            <th style="width: 80px;">Status</th>
+            <th style="width: 100px;"> Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customerDetails;let i =index">
+            <td class="align-middle">{{customer.firstName }}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.middleName}}</td>
+            <td>{{customer.jobTitle}}</td>
+            <td>{{customer.personalEmail}}</td>
+            <td>{{customer.workEmail}}</td>
+            <td>{{customer.companyContactEmail}}</td>
+            <td>{{customer.country}}</td>
+            <td>{{customer.state}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.createdDate | date}}</td>
+            <td>{{customer.createdBy}}</td>
+            <td>{{customer.status}}</td>
+            <td class="">
+              <span class=" me-1 "><a aria-current="page" data-bs-toggle="modal" data-bs-target="#updateDetails"
+                  (click)="updateExistingCustomerForm(customer)"><i
+                    class="fa-solid fa-pen-to-square me-4 table-icon  "></i></a></span>
+              <span class="">
+                <a (click)="DeleteAlertConfirmationCustomer(customer.leadId)"><i class="fa-solid fa-trash  table-icon "></i></a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="float-start d-flex align-items-center justify-content-center w-100 footer border-top p-1 me-5">
+    <div class="col-2 d-flex w-50 align-items-center overflow-hidden ">
+      <div class="ms-3 ">
+        <div class="dataTables_length ">
+          <label class="d-flex "><span class="me-1 showentry-label">Show </span>
+            <select [(ngModel)]="pageSize" (change)="pageSizeChanged()" class="showEntry">
+              <option value="5">1-5</option>
+              <option value="10">1-10</option>
+              <option value="15">1-15</option>
+              <option value="20">1-20</option>
+            </select> <span class="ms-1 showentry-label">Entries</span></label>
+        </div>
+        
+      </div>
+     
+    </div>
+    <nav aria-label="Page navigation example ">
+      <ul class="pagination">
+        <li class="page-item" (click)="prevPage()">
+          <a class="page-link border border-0 text-secondary" aria-label="Previous">
+            <span aria-hidden="true">Previous</span>
+          </a>
+        </li>
+  
+        <ng-container *ngFor="let page of totalPagesArray; let i = index">
+          <li class="page-item mx-2 " [class.active]="currentPage === (i + 1)">
+            <a *ngIf="!admin" class="page-link pagiButton " (click)="getUserAddedData(i + 1, pageSize,userIdentity)">{{ i + 1 }}</a>
+            <a *ngIf="admin" class="page-link pagiButton " (click)="getAllCustomerData(i + 1, pageSize)">{{ i + 1 }}</a>
+            <!-- getUserAddedData(this.currentPage, this.pageSize,this.userIdentity); -->
+          </li>
+        </ng-container>
+
+        <li class="page-item " (click)="nextPage()">
+          <a class="page-link border border-0 text-secondary " aria-label="Next">
+            <span aria-hidden="true">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="  float-end fs-5   text-dark ">Showing {{currentPageRecordCount}} Records from {{totalItems}} entries </div>
+
+    </div>
+
+
+</div>
+<!-- =========================================User Dashboard====================================================== -->
+<div class="container-fluid" *ngIf="!Dashboard">
+
+  <div class="w-100 d-flex m-2 " >
+  
+    <div class="d-flex  mt-2 w-100 align-items-center">
+      <div class="float-start  ">
+     <label class="d-flex datacount ">Users &nbsp;&nbsp;<span class="text-secondary">
+          (<span class="text-dark mb-0">{{totalItems}}</span>)
+        </span>
+      </label>
+    </div>
+      <div class="d-flex w-100 justify-content-end float-end align-items-center">
+      <div class="me-2 ">
+        <i class="fa-solid fa-magnifying-glass search-icon text-secondary fs-4 "></i>
+        <input type="text" class="search-input me-2 " placeholder="Search Customer" [(ngModel)]="searchText"
+        (keyup)="userSearch()">
+        
+        </div>
+      
+        <button type="button" class=" Button me-3  float-end " data-bs-toggle="modal"
+          data-bs-target="#addUser"><i class="fa-solid fa-plus"></i> <span class="fw-bold"> Add User</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="UserDashboard">
+   
+    <div class="card-body  pt-0 w-100">
+      <table id="dataTable" class="table align-middle ">
+        <thead class="text-center">
+          <tr>
+            <th style="width: 10%;" >First Name</th>
+            <th style="width: 10%;" >Last Name</th>
+            <th style="width: 10%;" >Middle Name</th>
+            <th style="width: 10%;" >Personal Email</th>
+            <th style="width: 10%;" >Creadted Date</th>
+            <th style="width: 10%;" > Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userDetails;let i =index">
+            <td>{{user.firstName }}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.middleName}}</td>
+            <td>{{user.email}}
+            <td>{{user.createdDate | date}}</td>
+
+            <td class="">
+              <span class=" me-1 ">
+                <a aria-current="page" data-bs-toggle="modal" data-bs-target="#updateUser"  (click)="updateExistingUserForm(user)">
+                  <i  class="fa-solid fa-pen-to-square me-4   table-icon "></i>
+                </a>
+              </span>
+              <span class="">
+                <a (click)="DeleteAlertConfirmationUser(user.userId)"><i class="fa-solid fa-trash  table-icon "></i>
+                </a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <div class="float-start d-flex align-items-center justify-content-center w-100 footer border-top p-1 me-5">
+    <div class="col-2 d-flex w-50 align-items-center overflow-hidden ">
+      <div class="ms-3 ">
+        <div class="dataTables_length ">
+          <label class="d-flex "><span class="me-1 showentry-label">Show </span>
+            <select [(ngModel)]="pageSize" (change)="pageSizeChanged()" class="showEntry">
+              <option value="5">1-5</option>
+              <option value="10">1-10</option>
+              <option value="15">1-15</option>
+              <option value="20">1-20</option>
+            </select> <span class="ms-1 showentry-label">Entries</span></label>
+        </div>
+        
+      </div>
+     
+    </div>
+    <nav aria-label="Page navigation example ">
+      <ul class="pagination">
+        <li class="page-item" (click)="prevPage()">
+          <a class="page-link border border-0 text-secondary" aria-label="Previous">
+            <span aria-hidden="true">Previous</span>
+          </a>
+        </li>
+        <!-- <li class="page-item"><a class="page-link active" (click)="getAllData(1,pageSize)" >1</a></li>
+        <li class="page-item "><a class="page-link" (click)="getAllData(2,pageSize)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="getAllData(3,pageSize)">3</a></li> -->
+        <ng-container *ngFor="let page of totalPagesArray; let i = index">
+          <li class="page-item mx-2 " [class.active]="currentPage === (i + 1)">
+            <a class="page-link pagiButton " (click)="getAllCustomerData(i + 1, pageSize)">{{ i + 1 }}</a>
+          </li>
+        </ng-container>
+
+        <li class="page-item " (click)="nextPage()">
+          <a class="page-link border border-0 text-secondary " aria-label="Next">
+            <span aria-hidden="true">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="  float-end fs-5   text-dark ">Showing {{currentPageRecordCount}} Records from {{totalItems}} entries </div>
+
+    </div>
+
+
+</div>
+      </div>
+    </div>
